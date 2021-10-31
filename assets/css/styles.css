@@ -38,94 +38,182 @@
 
   --z-tooltip: 10;
   --z-fixed: 100;
-
-  @media sreen and (min-width: 968px) {
-    :root {
-      --biggest-font-size: 3rem;
-      --h2-font-size: 1.75rem;
-      --h3-font-size: 1.25rem;
-      --normal-font-size: 1rem;
-      --small-font-size: 0.875rem;
-    }
-  }
-
-  /*======== BASE =========*/
-  *,
-  ::before,
-  ::after {
-    box-sizing: border-box;
-  }
-
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /*======== VARIABLES DARK THEME =========*/
-
-  /*======== BUTTON DARK/LIGHT =========*/
-
-  body {
-    margin: var(--header-height) 0 0 0;
-    font-family: var(--body-font);
-    font-size: var(--normal-font-size);
-    background-color: var(--body-color);
-    color: var(--text-color);
-    line-height: 1.6;
-  }
-
-  h1,
-  h2,
-  h3,
-  ul,
-  p {
-    margin: 0;
-  }
-
-  h1,
-  h2,
-  h3 {
-    font-weight: var(--font-semi-bold);
-    color: var(--title-color);
-  }
-
-  ul {
-    padding: 0;
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /*======== CLASS CSS =========*/
-  .section {
-    padding: 4rem 0 2rem;
-  }
-
-  .section-title,
-  .section-title-center {
-    font-size: var(--h2-font-size);
-    color: var(--title-color);
-    text-align: center;
-    margin-bottom: var(--mb-3);
-  }
-
-  /*======== LAYOUT =========*/
-
-  /*======== NAV =========*/
-
-  /* SHOW MENU */
-
-  /* ACTIVE MENU LINK */
-
-  /* CHANGE BACKGROUD HEADER */
-
-  /* SCROLL TOP */
-
-  /*======== HOME =========*/
 }
+
+@media screen and (min-width: 968px) {
+  :root {
+    --biggest-font-size: 3rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.875rem;
+  }
+}
+
+/*======== BASE =========*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*======== VARIABLES DARK THEME =========*/
+
+/*======== BUTTON DARK/LIGHT =========*/
+
+body {
+  margin: var(--header-height) 0 0 0;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+ul,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*======== CLASS CSS =========*/
+.section {
+  padding: 4rem 0 2rem;
+}
+
+.section-title,
+.section-title-center {
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: var(--mb-3);
+}
+
+/*======== LAYOUT =========*/
+html.sr {
+  margin-top: -3rem;
+}
+.l-main {
+  overflow: hidden;
+}
+
+.bd-container {
+  max-width: 968px;
+  width: calc(100% - 3rem);
+  margin-left: var(--mb-3);
+  margin-right: var(--mb-3);
+}
+
+.bd-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.l-header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-color);
+}
+
+/*======== NAV =========*/
+.nav {
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2.5rem 0 0;
+    text-align: center;
+    background-color: var(--body-color);
+    transition: 0.4s;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    z-index: var(--z-fixed);
+  }
+}
+
+.nav__item {
+  margin-bottom: var(--mb-3);
+}
+
+.nav__link,
+.nav__logo,
+.nav__toggle {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+
+.nav__logo:hover {
+  color: var(--frist-color);
+}
+
+.nav__link {
+  transition: 0.3s;
+}
+
+.nav__link:hover {
+  color: var(--frist-color);
+}
+
+.nav__toggle {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* SHOW MENU */
+
+.show-menu {
+  top: calc(var(--header-height) + 1rem);
+}
+
+/* ACTIVE MENU LINK */
+
+/* CHANGE BACKGROUD HEADER */
+
+/* SCROLL TOP */
+
+/*======== HOME =========*/
