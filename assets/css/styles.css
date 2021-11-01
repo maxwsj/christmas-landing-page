@@ -5,8 +5,8 @@
   --header-height: 3rem;
 
   /*======== COLORS =========*/
-  --frist-color: #da2535;
-  --frist-color-alt: #c42130;
+  --first-color: #da2535;
+  --first-color-alt: #c42130;
   --first-color-send: #de3b49;
   --title-color: #161212;
   --text-color: #5b5757;
@@ -122,9 +122,6 @@ img {
 }
 
 /*======== LAYOUT =========*/
-html.sr {
-  margin-top: -3rem;
-}
 .l-main {
   overflow: hidden;
 }
@@ -188,7 +185,7 @@ html.sr {
 }
 
 .nav__logo:hover {
-  color: var(--frist-color);
+  color: var(--first-color);
 }
 
 .nav__link {
@@ -196,7 +193,7 @@ html.sr {
 }
 
 .nav__link:hover {
-  color: var(--frist-color);
+  color: var(--first-color);
 }
 
 .nav__toggle {
@@ -211,9 +208,145 @@ html.sr {
 }
 
 /* ACTIVE MENU LINK */
+.active-link {
+  position: relative;
+}
+
+.active-link::before {
+  content: '';
+  position: absolute;
+  bottom: -0.75rem;
+  left: 45%;
+  width: 5px;
+  height: 5px;
+  background-color: var(--title-color);
+  border-radius: 50%;
+}
 
 /* CHANGE BACKGROUD HEADER */
+.scroll-header {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
 
 /* SCROLL TOP */
+.scrolltop {
+  position: fixed;
+  right: 1rem;
+  bottom: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  background: rgba(218, 37, 53, 0.5);
+  border-radius: 0.4rem;
+  z-index: var(--z-tooltip);
+  transition: 0.4s;
+  visibility: hidden;
+}
 
+.scrolltop:hover {
+  background-color: var(--first-color);
+}
+
+.scrolltop__icon {
+  font-size: 1.5rem;
+  color: var(--body-color);
+}
+
+.show-scroll {
+  visibility: visible;
+  bottom: 1.5rem;
+}
 /*======== HOME =========*/
+.home__container {
+  row-gap: 0.5rem;
+}
+
+.home__img {
+  width: 280px;
+  justify-content: center;
+}
+
+.home__title {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--mb-2);
+}
+
+.home__description {
+  margin-bottom: var(--mb-3);
+}
+/*========== BUTTONS ==========*/
+.button {
+  display: inline-block;
+  background-color: var(--first-color);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: var(--font-semi-bold);
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: var(--first-color-alt);
+}
+
+.button-link {
+  background: none;
+  padding: 0;
+  color: var(--first-color);
+}
+
+.button-link:hover {
+  background-color: transparent;
+  color: var(--first-color-alt);
+}
+
+/*========== SHARE ==========*/
+.share__data {
+  text-align: center;
+}
+
+.share__description {
+  margin-bottom: var(--mb-2);
+}
+
+.share__img {
+  width: 280px;
+  justify-content: center;
+}
+
+/*========== DECORATION ==========*/
+.decoration__container {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.decoration__data {
+  text-align: center;
+  padding: 1rem 1rem 2rem;
+  background-color: var(--container-color);
+  box-shadow: 0 2px 6px rgba(65, 11, 16, 0.15);
+  border-radius: 1rem;
+}
+
+.decoration__data:hover {
+  box-shadow: 0 3px 12px rgba(65, 11, 16, 0.15);
+}
+
+.decoration__img {
+  width: 180ox;
+}
+
+.decoration__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-1);
+}
+/*========== ACCESSORIES ==========*/
+
+/*========== SEND GIFT ==========*/
+
+/*========== FOOTER ==========*/
+
+/*========== MEDIA QUERIES ==========*/
+
+/* For full-screen images on small screens */
